@@ -1,0 +1,155 @@
+---
+layout: post
+title: "OOD and JS"
+date: 2014-10-09 12:54
+comments: true
+categories: 
+---
+Using (correctly) Objects and OOD in JS is a key art of the path to all the knowledge and wisdom. Some notes on the matter, mainly from Chapter 6 of **Programming in HTML5 with JavaScript and CSS3** by Glen Johnson.
+
+#####First things first
+There is no class keyword in JS. But there is a prototype keyword, that can be used with the Object data type.
+
+The idea is to clone the Object buy using `new Object()`. But let's go with order.
+
+#####Literal notation - instance of an Object
+
+On object instance can be generated with the literal notation:
+
+     var mooooka = {
+                 name: "Dagny",
+                 type: "Greyhound",
+                 speak: function() {return "Bau Bau!"}
+     };
+    
+The most glearing mistake in the code above is that greyhounds do not really bark, but you get the point.
+
+#####Creating Objects programmatically - constructor pattern
+The idea: you generate a class by assigning to a function the construction of the object. This function will return the Object.
+
+        function getDog(name, type, audio) {
+            var dog = new Object();
+            dog.name = name;
+            dog.type = type;
+            dog.speak = function () { return audio };
+            return dog;
+        }
+       
+        var Dagny = getDog('Dagny', 'Greyhoud', 'Bau Bau!');
+       
+
+####Creating classes
+No one is preventing you from assigning the creation function directly to the class name that you want. In this case the function will not return anything, it is the class itself:
+
+        function Dog(theName, theType, theAudio) {
+            name = theName;
+            type = theType;
+            speak = function () { return theAudio };
+        }
+       
+        var Dagny = Dog('Dagny', 'Greyhoud', 'Bau Bau!');
+       
+This also remembering that functions are first class citizens in JS.
+
+####Creating a class WITH ENCAPSULATION
+Now this is all good and fine, but the class above creates variables in the global scope (bleah!). Enters encapsulation, where
+variables are only in a certain scope.
+
+        function Dog(theName, theType, theAudio) {
+            var name = theName;
+            var type = theType;
+            this.speak = function () { return theAudio };
+        }
+       
+        var Dagny = Dog('Dagny', 'Greyhoud', 'Bau Bau!');
+
+now only speak is public, the rest is encapsulated (let aside we'd like to know the Dog's name after creation, this is an example).
+
+
+####Enters the prototype
+Now, after creating we can add behavior to is by changing its **prototype**.
+
+        Dog.prototype.getName = function() { return this.name };
+
+Or, for best practice:
+
+        function Dog(theName, theType, theAudio) {
+            var name = theName;
+            var type = theType;
+            this.speak = function () { return theAudio };
+            this.getName = function() {return name};
+            this.getType = fuction() {return type};
+        }
+       
+        Dog.prototype.getSalutation = function() { return 'Hi, my name is ' + this.getName() +'and I am a ' +  this.getType()}
+
+This pattern gracefully exposes the API of the object with methods.
+
+
+#####Enter namespaces
+In order to keep the encapsulation, IFFEs and namespaces can be used.
+A namespace is nothing more than an object that contains and encapsulates information and behavior.
+
+It is lazily instantiated:
+
+    var myApp = myApp || {}
+ 
+And in your file:
+
+
+    (function(){
+        this.myApp = myApp || {};
+        var rootNs = myApp;
+       
+        rootNs.someFunction = function() {
+       
+        };
+       
+        // now the namespace will have the someFunction
+    }())
+   
+   
+####Inheritance
+This is the generic class, that will be then specialized.
+
+    var Animal = (function(){
+        function Animal(name, type) {
+            this.name = name;
+            this.type = type;
+        };
+       
+        Animal.prototype.getInfo = function() {
+            return 'My name is '+ this.name + 'and I am a ' + this.type;
+        }
+       
+        return Animal;
+    })();
+   
+    var a = new Animal('Dagny', 'Dog');
+    var b = new Animal('Felix', 'Cat');
+   
+   
+**Specializing Behavior** is obtained by passing the generic class to the spcialized class.
+
+    var Dog = (function(parent){
+       
+        Dog.prototype = new Animal();
+        Dog.prototype.constuctor = Dog;
+       
+        function Dog(name, breed) {
+            parent.call(this, name, 'Dog');
+            this.breed = breed;
+        }
+       
+        Dog.prototype.speak = function() {
+            return 'bau bau';
+        };
+       
+        return Dog;
+    })(Animal);
+   
+    var c = new Dog('Dagny', 'Greyhoud');
+   
+   
+
+Note that, in the constructor, a call needs to be made to the generic class.
