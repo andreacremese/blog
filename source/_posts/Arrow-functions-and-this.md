@@ -14,7 +14,7 @@ The specs seem to suggest that a shorter syntax is part of the reason why arrow 
 
 As a reminder, **lexical scope** (aka static scope) means that each function has access to its own scope and to the scopes of the calling functions as they are declared. In case the variable / function requested is not present in the current scope, the higher level scope is searched.
 
-{% codeblock 'lexical scope' lang:javascript%}
+```javascript
 function doSomething() {
 	var a = "Andrea";
 	function printIt() {
@@ -25,9 +25,9 @@ function doSomething() {
 }
 
 doSomething(); // Prints The name is Andrea;
-{% endcodeblock %}
+```
 
-This is in contrast with **dymaic scope**, where the variable depends on the program state at execution time.
+This is in contrast with **dynamic scope**, where the variable depends on the program state at execution time.
 
 {% codeblock 'dynamic scope' lang:javascript%}
 function doSomething() {
