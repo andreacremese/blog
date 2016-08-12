@@ -1,7 +1,6 @@
 ---
-title: "Web Workers"
+title: Web Workers
 date: 2014-09-04 11:33
-comments: true
 tags:
 	- JS
 ---
@@ -11,9 +10,7 @@ Some notes form a quick Pluralsight course by Craig Shoemaker about web workers.
 
 They are targeted at AJAX work, for labour intensive processes that will take time to finish up and might significantly impair the UI of the page. Seconding the work to a web worker will not lock up the UI wile long threads are going on. It is, in a way, a manner to create multi thread programming.
 
-Some of the uses include: 3D rendering, API responses, encripting, statistical analysis, CFD, messaging in social network.
-
-They can be:
+Some of the uses include: 3D rendering, API responses, encripting, statistical analysis, CFD, messaging in social network. They can be:
 
 * dedicated (they are linked to the their creator).
 * shared (they can be called by any number of scripts).

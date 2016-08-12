@@ -17,7 +17,6 @@ I approached RabbitMQ right after having tried Azure service Bus Queues, which p
 These [folders on github](https://github.com/AndreaHK5/RabbitMqTutorials) contain the examples / tutorials for Rabbit MQ (refer to [their site](http://www.rabbitmq.com/tutorials/tutorial-one-dotnet.html) for architecture and more documentation). Some comments are added - mainly for my personal benefit and future reference. All solutions run locally and in some cases the behavior might have been slightly modified from the one proposed in the Pivotal examples.
 
 I also added an extra folder with an exercise that mixes many aspects of SOA in RabbitMQ:
-
 * Topics (implemented as exchanges in the RabbitMQ world).
 * Binding the routing keys (note that Binding for RabbitMQ means something completely different than in the MS - WCF world).
 * Use of "acknowledgments" receipts for "at-most-once" messaging.

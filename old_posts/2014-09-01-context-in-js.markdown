@@ -7,16 +7,16 @@ categories:
 ---
 I found this rather interesting [video][web0] and this [blog entry][web1] on Context in JS and the **this** keyword. Some reference code below.
 
-####Couple of definitions to warm up
+#### Couple of definitions to warm up
 
 **Execution context**: scope created in the global scope for a function that is called. This is added to the top of the stack and executed. Not the context I am referring to with **this**.
 
 **Context**: the obect that has called a certain function. It is associated with the this keyword and **it depends on where the function has been called**. 
 
-####Now for some chunks
+#### Now for some chunks
 
 
-	// Few examples of COntext, assuming we are calling this on the console of a blowser.
+	// Few examples of Context, assuming we are calling this on the console of a blowser.
 		
 	// simple function
 	function foo() {return this};

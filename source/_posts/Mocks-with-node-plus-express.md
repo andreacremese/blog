@@ -88,7 +88,7 @@ So ```curl -X POST -d  '{"Account" : "Account1"}' http://localhost:3000/api/over
 
 No need to restart servers, swap files or anything similar.
 
-### one word of caution
+### One word of caution
  
 The server above is a display example. In order to achieve this behavior on a larger scale it is better practice not to pollute the global scope, and instead:
 

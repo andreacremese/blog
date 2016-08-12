@@ -48,13 +48,7 @@ Here's the work around:
 
 Et volia, in mac you shoudl not be able to navigate to http://winhost:2067, running in VS on a virtual machine in Parallels.
 
-Here for some references:
-
-[Serving external traffic with WebMatrix Beta](http://blogs.iis.net/vaidyg/archive/2010/07/29/serving-external-traffic-with-webmatrix-beta.aspx)
-
-[Remotely accessing the Windows Azure Compute Emulator](http://fabriccontroller.net/blog/posts/remotely-accessing-the-windows-azure-compute-emulator/)
-
-[Stack Overflow : Android Emulator loopback to IIS Express does not work, but does work with Cassini](http://stackoverflow.com/questions/6192726/android-emulator-loopback-to-iis-express-does-not-work-but-does-work-with-cassi/18958879#18958879)
+Here for some references: [Serving external traffic with WebMatrix Beta](http://blogs.iis.net/vaidyg/archive/2010/07/29/serving-external-traffic-with-webmatrix-beta.aspx), [Remotely accessing the Windows Azure Compute Emulator](http://fabriccontroller.net/blog/posts/remotely-accessing-the-windows-azure-compute-emulator/), [Stack Overflow : Android Emulator loopback to IIS Express does not work, but does work with Cassini](http://stackoverflow.com/questions/6192726/android-emulator-loopback-to-iis-express-does-not-work-but-does-work-with-cassi/18958879#18958879)
 
 
 
