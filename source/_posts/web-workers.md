@@ -1,13 +1,13 @@
 ---
-layout: post
 title: "Web Workers"
 date: 2014-09-04 11:33
 comments: true
-categories: 
+tags:
+	- JS
 ---
 Some notes form a quick Pluralsight course by Craig Shoemaker about web workers.
 
-####Web workers
+#### Web workers
 
 They are targeted at AJAX work, for labour intensive processes that will take time to finish up and might significantly impair the UI of the page. Seconding the work to a web worker will not lock up the UI wile long threads are going on. It is, in a way, a manner to create multi thread programming.
 
@@ -21,7 +21,7 @@ They can be:
 
 Note that **IE < 10 does not support them**.
 
-####Access restrictions
+#### Access restrictions
 There are some quite severe access restrictions for the web workers:
 
 * No access to the DOM - the UI is kept completely separate.
@@ -37,14 +37,14 @@ In other words, fun encapsulation. There si access to:
 * Timers
 * HttpRequests
 
-####How to set up
+#### How to set up
 
-#####Instantiate (DOM)
+##### Instantiate (DOM)
 Instantiate a Worker object in the DOM. Note that the worker logic sits in a separate file.
 
 	var worker = new Worker('name_File.js');
 
-#####Register the events handlers (DOM)
+##### Register the events handlers (DOM)
 Register the handlers for the events that the worker might fire:
 
 	worker.onmessage = messageHandler;
@@ -53,7 +53,7 @@ Register the handlers for the events that the worker might fire:
 
 The worker gets information and arguments by receiving messages and sends back information by responding to those messages with other messages. 
 
-#####Defining the events handlers (DOM)
+##### Defining the events handlers (DOM)
 messageHandler method will be the way the DOM will respond to the success of the worker.
 
 	function messageHandler(e){
@@ -71,7 +71,7 @@ Of course it would be good practice to handle the error as well
 	};
 	
 
-#####Setting up the worker
+##### Setting up the worker
 The web worker has mainly two parts inside: 1) the function and logic that is to be performed and 2) listener for incoming messages. Part 2 goes like this:
 
 	addEventListener("message", some_function, true); 
@@ -98,10 +98,10 @@ The way to comunicate back to the main thread is to post messages back.
 	
 **note**: the method that is used to communicate back and forth between worker and main thread is the same: postMessage().
 
-####Use
+#### Use
 The DOM and the web worker communicate through the postMessage method. Let's see how this can work.
 
-#####Passing arguments around
+##### Passing arguments around
 It is good practice not to send and return simple strings or instances of atomic data types, but rather send objects.
 	
 	//in the DOM:
@@ -123,7 +123,7 @@ It is good practice not to send and return simple strings or instances of atomic
 
 Note that args is passed by value, meaning that whatever change it is made to the args in the worker will not be reflected to the DOM unless you specifically pass the args over and they are considered and read.
 
-#####With AJAX
+##### With AJAX
 
 The same basic architecture is used, but the postMessage in the web worker will be called when the http request has finished (meaning status 200 and ready state 4). Only at that point I will send the message back to the DOM.
 
@@ -132,7 +132,7 @@ The same basic architecture is used, but the postMessage in the web worker will 
 	} 
 
 
-#####How to stop
+##### How to stop
 There is no way to pause a worker while it is doing what he does. The two options are to wither terminate or close. 
 
 Terminate is an abrupt termiation of the code, from the DOM environment.

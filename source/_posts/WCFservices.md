@@ -17,7 +17,7 @@ The folks at Microsoft decided it to be fun for include WCF in the syllabus. So 
 * [WCF Jumpstart](http://www.pluralsight.com/courses/wcf-jumpstart).
 * [10 Ways to Build Web Services in .NET](http://www.pluralsight.com/courses/building-dotnet-web-services-10ways).
 
-##Why should I use WCF?
+## Why should I use WCF?
 ##### #1 Don't worry about the plumbing
 Windows Communication Foundation is an framework intended to minimize the effort in setting up communication between client and server side. It is a bit like a code first for Entity Framework, but instead of settign up a database with it, the code will then set up the API call and end points. Metaprogramming - code that writes code.
 The basic idea is to address the issue of conventional RESTful APIs: the client side needs to have access to the access points and data structure required / returned in order to operate properly. This might be cumbersome during development. Enters WSDL (wiz-del).
@@ -39,10 +39,10 @@ The interesting feature is that end points and business logic are separated. So 
 ##### #3 Share the models
 Related to the points above, the client side does not need to have extra view model hard coded in, it can leverage to the data types that are coming through the wire automatically.
 
-##what goes in the WDSL specification (and therefore in the WCF)
+## what goes in the WDSL specification (and therefore in the WCF)
 At the end of the day, the API will need the end points, the data and the methods. Let's define them.
 
-#####Data entities
+##### Data entities
 The WCF service needs to have reference to two packages for the serialization" **System.Runtime.Serialization** and **System.ServiceModel**.
 
 This allows you to decorate the classes with the DataContract and DataMember attributes. In other words, you can specify what get serialized and send through the wire.
@@ -67,7 +67,7 @@ This allows you to decorate the classes with the DataContract and DataMember att
     	}
 	} 
 
-#####Operations available
+##### Operations available
 Similar to above, the Service and Operations contracts are defined in the code. Note the reference to the entities.
 
 	using YourService.Entities;
@@ -86,7 +86,7 @@ Similar to above, the Service and Operations contracts are defined in the code. 
 	}
 
 
-#####ABC of end points (configuration)
+##### ABC of end points (configuration)
 Each access point is defined by its ABC: 
 
 * Address - usually protocol + servier + resource Uri (http://localhost2112/GetMePizza)
@@ -124,7 +124,7 @@ And the end point **behavior** can be amended as well -  say to send the excepti
     </behaviors>
 
 
-#####What is there in a WCF service (as a project)
+##### What is there in a WCF service (as a project)
 
 A WCF project is basically a C# class which includes:
 - App.config (endpoints).
@@ -136,7 +136,7 @@ A WCF project is basically a C# class which includes:
 An alternative approach is rather to add the WCF as an item to an ASP.NET project. In this case, if you want to run debug on the WCF alone, you'd need to set the preferences manually (Debug -> Start External Project -> select the WCF test client .exe file in the .NET local folder)
 
 
-##How to host the service during Development
+## How to host the service during Development
 There are three main ways to host a service:
 
 - Debug in VS - smoke test.
@@ -144,7 +144,7 @@ There are three main ways to host a service:
 - In an ASP.NET environment (remember that, if you host this in IIS it will work only with HTTP binding as a standard).
 
 
-#####Console hosting
+##### Console hosting
 Out of the three I find the console hosting the most interesting, maybe as it is the most barebones. It is basically instantiate a ServiceHost and keeping it "alive".
 
 		namespace ConsoleHosting
@@ -209,7 +209,7 @@ Also note that, in order to run a WCF as a console app, you will need to turn of
     </services>
 
     
-##Architecture of the Solution
+## Architecture of the Solution
 Interestingly, but not surprisingly, the two courses I followed suggested two different architectures of the projects' organization:
  
 * One with 5 namespaces
@@ -229,7 +229,7 @@ OR otherwise
 
 The first implementation seems to me the more linear and easier to understand to me (especially for separation of concerns). In the second implementation I started to have issues with the implementation of the client side, due to clashing after having created the proxy (more on proxy later).
 
-##The proxy element / client side 
+## The proxy element / client side 
 One of the biggest reasons to set up a WCF service is to leverage the Web Services Description Language.
 
 To review the main idea is that:
@@ -245,7 +245,7 @@ If instead the service is hosted in a console app / IIS you are better off start
 
 Obviously, as the back end gets updated, the client side can be updated automatically too. That is a nice plus.
 
-####Once you get the proxy
+#### Once you get the proxy
 
 At this point the client side can instantiate a the proxy object, which has a method for each endpoint call made available by the server side (actually, it gives one method for the sync and one for the async). 
 
@@ -260,7 +260,7 @@ For example, in order to reach an end point in the client controller all you nee
  	ObservableCollection<Customers> customers = proxy.GetCustomers();
  	
  
-####Standaonle client side
+#### Standaonle client side
 Note that all this is possible also if the WCF service solution is hosted somewhere else (say in Azure) and you don't have direct access to the it namespace. At the end all you need is access to the WSDL specification for the service in order to generate the proxy element. 
 
 I have not tried the second scenario, but I believe it is likely that the Firewall will need to be opne + CORS needs to be enabled for the API to work correctly.

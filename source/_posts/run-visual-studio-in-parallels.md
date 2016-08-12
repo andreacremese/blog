@@ -9,11 +9,11 @@ tags:
 ---
 *This article discusses my attempts (and eventual success) to connect remotely to a solution running in the Visual Studio Debugger in a Parallels VM.*
 
-#####Connecting to a Visual Studio localhost
+##### Connecting to a Visual Studio localhost
 
 To me, it is much nicer to develop an angular (or a node project in OSX or Linux). But if your backend project is in, say, .NET, it is a pain to debug in local. When working on extensive - mid-large scale projects - this is seldom the situation.
 
-#####The standard solution: IIS
+##### The standard solution: IIS
 Yes, I know, you can run everything in Parallels (or have a win machine in the first place) and yes, of course, you can run the .NET solution in an IIS site and yes, by all means, you can add that site to your host files so you can connect to it from your OSX environment (say that you run Parallels or any other VM). 
 
 **BUT** all this adds another (unwanted) piece to the puzzle: IIS.
@@ -24,7 +24,7 @@ Also, after a bit of doing this, I realized some idiosyncrasies of IIS, especial
 
 This is all due to the fact that Visual Studio runs a solution in IIS Express, and it does not allow to connect to that solution remotely. I guess this is a security feature, but we are responsible people (aren't we?!?!).
 
-#####Doing away with IIS
+##### Doing away with IIS
 
 So I tried a few things to get around this. I even tried some port forwarding (yes I wanted this *that* badly). I finally set on a solution.
 
