@@ -1,5 +1,5 @@
 ---
-title: "Bolt On Note: SQL injections"
+title: Bolt On Note, SQL injections
 date: 2013-12-24 01:52
 tags:
 	- Ruby

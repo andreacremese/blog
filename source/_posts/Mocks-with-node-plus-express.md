@@ -1,5 +1,5 @@
 ---
-title: "Mocks with Node + Express"
+title: Mocks with Node + Express
 date: 2015-05-07 22:06:21 -0400
 comments: true
 tags: 
