@@ -8,9 +8,9 @@ tags:
 
 In the past month or so I found myself discussing the ES6 Arrow function syntax in a few occasions. In some cases I realized that the general understanding was **"arrow functions are just a different, more concise way of writing anonymous functions in JS"**. I have to confess that at the beginning that was as well my impression. Watching [Mark Zamoyta's ES6 training on Pluralsight](https://www.pluralsight.com/courses/rapid-es6-training) gave a great impetous in order to dissect the nuances of arrow functions.
 
-The specs seem to suggest that a shorter syntax is part of the reason why arrow functions were introduced, but they are not a like-or-like substitution for anonymous methods. There are other differences that need to be taken into consideration and, to my mind, the main difference is that [**an arrow functions [...] does not bind its own "this"**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) (from the Mozilla docs).
+The specs seem to suggest that a shorter syntax is part of the reason why arrow functions were introduced, but they are not a like-for-like substitution for anonymous functions. There are other differences that need to be taken into consideration and, to my mind, the main difference is that [**an arrow functions [...] does not bind its own "this"**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) (from the Mozilla docs).
 
-### Lexical scope
+### Introduction: Lexical scope, Dynamic scope and `this`
 
 As a reminder, **lexical scope** (aka static scope) means that each function has access to its own scope and to the scopes of the calling functions as they are declared. In case the variable / function requested is not present in the current scope, the higher level scope is searched.
 
@@ -42,11 +42,17 @@ function printIt() {
 doSomething(); // Gives a 'Reference error' as 'a' is not in scope. A language like LISP with dynamic scope would be able to access 'a'.;
 {% endcodeblock %}
 
+
+In other words, dynamic scoping would assign variables not according to where functions are written, but rather looking at the call stack. In this case the decision of what the scope containts is a runtime decision, while the lexical scoping decision is a parse time one.
+
+Javascript has lexical scope, functions have their own scope when they run (Note: if functions are new'ed they return that scope automatically). But Javascript provides us well with the `this` mechanism, which instead of doing scope lookups traverses the delegation chain, in a mechanism that is similar to dynamic scope.
+
+
 ### Arrow functions and lexical scope
 
-Arrow functions do not bind to their own lexical scope, but rather they bind to the lexical scope of the function they are invoked into. This makes them very useful as they don’t create a new "this" in the scope and bind to that the way a `function` expression does. If `this` is called inside an arrow function, the "higher level's" `this` is actually accessed. 
+Arrow functions do not bind to their own lexical scope, but rather they bind to the lexical scope of the function they are invoked into. In other words, they don't create a new scope but rather bind automatically to the scope they are invoked in. This makes them very useful as they don’t create a new 'this' in the scope and bind to that the way a `function` expression does. Also, if`this` is called inside an arrow function, the "higher level's" `this` is actually accessed. 
 
-So for example in callbacks, handlers and any situation in which an anonymous function expression is nested within a function with a scope, there is no need to do the old fashion "save `this` into a variable to be able to access it from the callback". 
+A good example of this behavior is in callbacks, handlers and any situation in which an anonymous function expression is nested within a function with a scope. With an arrow function there is no need anymore to do the old fashion "save the reference to `this` into a variable to be able to access it from the callback". 
 
 
 Meaning:
