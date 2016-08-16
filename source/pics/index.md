@@ -1,7 +1,7 @@
 ---
 title: Pics
 date: 2016-08-02 18:18:46
-comments: false
+comments: true
 ---
 How often does it happen that you read something very interesting off a blog / a youtube video / simlar, and a few months later you cannot retrace your steps to that resource. 
 
@@ -20,9 +20,9 @@ This is the go-to book to understand the Mainframe => PC movement in the 70s and
 
 ### Trimph of the nerds
 A 1996 PBS report by Robert Cringley about the early days of the PC revolution (in 3 parts).
-{% youtube sX5g0kidk3Y}
+{% youtube sX5g0kidk3Y %}
 
-# Tools
+# Tools 
 
 ### Auto Node Versioning
-When using multiple node versiosn in different projects switching may be a pain. [AVN](https://github.com/wbyoung/avn) makes it super easy!.
+When using multiple node versiosn in different projects switching may be a pain. [AVN](https://github.com/wbyoung/avn) makes it super easy!
