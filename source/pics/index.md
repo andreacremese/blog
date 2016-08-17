@@ -26,3 +26,10 @@ A 1996 PBS report by Robert Cringley about the early days of the PC revolution (
 
 ### Auto Node Versioning
 When using multiple node versiosn in different projects switching may be a pain. [AVN](https://github.com/wbyoung/avn) makes it super easy!
+
+# Creativity
+
+### John Cleese on creativity
+Being creative is easy, like attacking someone with a banana
+
+{% youtube https://www.youtube.com/watch?v=4j-Lz0D5_ck %}

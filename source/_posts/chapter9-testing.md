@@ -1,9 +1,11 @@
 ---
-layout: post
-title: "chapter9 - testing"
+
+title: POODR - Notes from Chapter 9 - testing
 date: 2014-05-08 20:04
 comments: true
-categories: 
+tags: 
+	- Ruby
+	- Rails
 ---
 The importance of testing cannot be underestimated. As a personal note, I can't believe that during my time coding in Fortran we did not implement TDD but rather testing was done manually (well, we also had physical validation to ensure the data was correct).
 
@@ -34,7 +36,7 @@ A few functions are to be tested:
 * Duck Typing.
 * Inheritance structures.
 
-###Incoming Interfaces
+### Incoming Interfaces
 These are the public methods of the class, tested making assertions about the expected response. A good example is attr_accessor.
 
 	class Dog
@@ -104,7 +106,7 @@ To be more precise, what you need from a Double is the behavior, not the leash i
 
 The easy way out of this is to implement a Duck Type testing, more on this later (the basic idea is to put the relevant testing in a module and include that module in the Double as well).
 
-###Outgoing Messages
+### Outgoing Messages
 Outgoing messages are Queries or Commands, and in most cases they are not tested. If they need to be tested, a particular pattern for the test is required.
 
 	[...]
@@ -131,7 +133,7 @@ Regarding the test:
 - Second line triggers the action.
 - Third line actually does the testing.
 
-###Duck typing
+### Duck typing
 
 When you have many objects that can pose as a duck, you cannot implement the same test in all of them by control-c and control-v. That is a blatant violation of DRY.
 
@@ -162,7 +164,7 @@ As a test is, basically, a behavior - the idea is to lump the testing in a modul
 By including the module of the testing behavior, the testing will get run.
 
 
-###Testing inheritance
+### Testing inheritance
 
 Inheritance actually presents many folds in terms of testing:
 

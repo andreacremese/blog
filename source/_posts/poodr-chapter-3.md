@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "POODR chapter 3"
+title: POODR - Notes from Chapter 3
 date: 2014-03-27 10:45
 comments: true
-categories: 
+tags:
+	- Ruby 
+	- Rails 
 ---
 Still a bit jet lagged form the airplane, here are some notes from chpater #3 of Poodr, all about **managing dependencies**.
 
@@ -14,7 +16,7 @@ As we know, messages are at the base of OOD. For an object ot interact with anot
 * Knowing an object that knows the interaction.
 
 The third is the one that is discussed in this chapter (and in this post), as it create **dependencies**.
-###Dependencies
+### Dependencies
 Dependencies are a necessary evil as they are required in order for the object to interact and send messages, BUT they contstrain the solution and the code. *Dependencies generate coupling*. Some degree is needed, the name of the game is to keep this to the minimum required.
 
 If left unattended, coupling might strangle your capacity to change the code later on. Ultimately, a dependency might prevent (or make it really expensive) to change an object as the ripple effects would be amplified a felt across the stack.
@@ -26,7 +28,7 @@ Type of dependencies:
 * The instatiation of another object requires some arguments that are not needed for the original object.
 * The order of the arguments for the instantiation is important.
 
-###Duck typing
+### Duck typing
 
 An interesting pre requisite concept for decoupling is **Duck Typing**. There are multiple definitions around, but the basic one is still my favourite:
 
@@ -40,7 +42,7 @@ My very humble interpretation stems from it, but with a different spin:
 
 This is the definition of a duck from the point of view of the object that is "using" the duck (sorry duck). But anyway, **it is the message that is important, not the attribute**.
 
-###Dependency injection
+### Dependency injection
 This is a technique that allows decoupling for objects. The aim is to 
 
 1. Isolate objects one another.
@@ -62,7 +64,7 @@ This is a technique that allows decoupling for objects. The aim is to
 	
 Is the correct implementation. These few lines actually have a lot inside. The mainfeature is that **whatever I pass into the object that has a .walk_like_a_duck method will be a duck.** If i convince a chicken to walk like a duck (sorry both for the mishap, it is for a good cause), for the SomeObject that chicken is a duck. And that is good news for decoupling!!
 
-###When dependency injection is not really possible
+### When dependency injection is not really possible
 
 In some horror cases, dependency injection is not really possible. This means that some work arounds are needed.
 
@@ -101,7 +103,7 @@ This is good, but still leaves the door open to any potentian issue right off th
  
  If duck has already been instantiatied we have it, otherwise we instantiate a new one, but only where and when it is needed. Note that `duck` in the `.walk_like_a_duck` is a message, not an attribute.
 
-###Isolating calls to other classes' methods
+### Isolating calls to other classes' methods
 Digging deeper into the code, the .walk_like_a_duck is a method that still pertains to a differen object, being this a duck or a very well trained chicken that can fake the duck walk.
 
 A futher level of decoiupling this is to isolate the method and turn this into a `.self` method. So in the example below (repeated for reference and in total violation to the DRY paradigm):
@@ -159,7 +161,7 @@ The first option is to remove the single arguments and pass in a single hash wit
 
 This adds verbosity, removes the dependencies on the order, and furnishes an explicit documentation for the code, embedded in the code.
 
-###Default values
+### Default values
 This is to tackle the lack of argument of creation (at the end of the day, a duck has 2 wings so far but we want to make sure - OK it is a silly example but I hope you can still follow).
 
 The easiset way is to implement this in the constructor (initialization) method
@@ -218,7 +220,7 @@ I will not get into this example in detail, but the idea is to create a *factory
 * seconding the construction of the object in a `.self` method in the the wrapper module. This module will accept the hash as input.
 
 
-###Direction of the dependency
+### Direction of the dependency
 
 Who is suppsed to include who? A few things to keep in mind:
 
@@ -227,7 +229,7 @@ Who is suppsed to include who? A few things to keep in mind:
 * Changing a model with many dependencies will result in widespread consequences.
 
 
-###A word of caution
+### A word of caution
 All this is to be taken into prospective. Will it save time in the next build to implement these changes? And in the build afterwards.
 
 

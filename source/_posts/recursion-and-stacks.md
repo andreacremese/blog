@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "recursion and stacks"
+title: Recursion and stack
 date: 2014-04-08 22:51
 comments: true
-categories: 
+tags:
+	- DSA
+	- Ruby
 ---
 As an intermission in my POODR coding adventure (et all), I am working on data structure. 
 
@@ -13,7 +15,7 @@ For those with a strong stomach, I am even putting together a [GitHub][website1]
 
 Anyhow, there are a couple of interesting consideration I wanted to blog about.
 
-####Interfaces, it is always about interfaces
+#### Interfaces, it is always about interfaces
 The concise notes do not have the best ruby syntax, far from it. And that is ok, it is a book about Data Structures. For the most part, POODR would have a things or two to say about the coding style.
 
 Regardless this, **the concept of interface is very strong in the explanation of the data types too**. Each data type is progressively introduced, from Containers onwards, by stating the public interface a certain type needs to offer to the outside world to be worthy.
@@ -22,7 +24,7 @@ This sounds like an elementary consideration (and maybe indeed it is), but nonet
 
 This is correlated to the implementation and, most importantly, to the testing.
 
-####Recursions VS Stacks
+#### Recursions VS Stacks
 The concept that a recursion can be solved with a stack and vice versa is one of those truths hidden in the eye of the sun, but the implications for are quite interesting. At the end of it, the computer will have its memory stack with allocated records for each recursion (so, basically, a stack..). 
 
 So why not implementing the problem as a stack in the first place? 

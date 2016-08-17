@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "Poodr - chapter 6 - Inheritance (whys and hows)"
+title: POODR - Notes from Chapter 6 Inheritance (whys and hows)
 date: 2014-04-12 11:39
-comments: true
-categories: 
+tags:
+	- Ruby
+	- rails
 ---
 In the big picture the why remains always the same for [poodr][website1] book: reduce the marginal cost of adding a functionality to a ruby application.
 
 Here are some notes on Chapter 6 - Inheritance.
-####The Basics
+#### The Basics
 
 Inheritance, at its core, is an **automatic message delegation** system. As seen in previous chapter, the core of OOD relies on messages and how these are exchanged between classes.
 
@@ -20,7 +21,7 @@ In order to avoid this, the idea is use inheritance. Conceptually, the mechanics
 
 One watch it: if inheritance is implemented with only one "child" class, it is very likely done wrong!
 
-####Automatic messaging delegation
+#### Automatic messaging delegation
 
 When using inheritance, if a message (method) is not present in the concrete (child) class, the call is automatically pushed up to the super class. 
 
@@ -56,10 +57,10 @@ This can be overrided and the beaviors mixed by calling <code>super</code> in th
 
 Note that a <code>super</code> call is an admission that the concrete class knows behaviors of the abstract class. In other word, **calling super is a coupling**. And coupling is bad as it might hinder the capability of the code to be scaled up.
 
-####Promoting Behavior...
+#### Promoting Behavior...
 The idea is to put all the behavior that is common (abstract) in the super class, letting the concrete classes to specialize.
 
-####...in initialization (Hook message)
+#### ...in initialization (Hook message)
 This is implemented right off the bat in the <code>initialize</code> method. In order to minimize the .super calls, the technique for the .new are to rely on explicit messages passed between the superclass and the child.
 
 * Let the superclass have the initialize method.
@@ -100,7 +101,7 @@ This is also called **hook message**.
 		[...]
 	end
 	
-####...in defaults for initialization (Template Method)
+#### ...in defaults for initialization (Template Method)
 
 Defaults for variables are best to be messages (surprise surprise) and to be implemented in the specialized class - see example below. 
 
@@ -149,7 +150,7 @@ The fact that the specialized class needs to implement a default value should no
 			
 		end
 
-####...for behavioral methods 
+#### ...for behavioral methods 
 
 In order to decouple as much as possible, the idea is to implement all of the behavior present in the child classes, and delegate down to them the behavior via a local message.
 
@@ -201,7 +202,7 @@ In a way, this seems to suggest that the superclass should have the public metho
 		end
 			
 
-####Conclusion
+#### Conclusion
 Some of my take aways:
 
 * Promote/specialize behavior.
