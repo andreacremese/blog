@@ -1,4 +1,0 @@
-# KeepTFS
-
-# GoToGit
-

@@ -3,6 +3,7 @@ title: Tfs or git?
 date: 2016-08-16 14:24:59
 tags:
 	- Source Control
+	- Best Practices
 ---
 
 There is a large amount of blog posts on the subject `TFS vs GIT`. I have experience using both, the former usually crops up when dealing with large legacy code bases of long running projects. The latter is the default choice for open source projects (in GitHub) and as well for proprietary projects (GitHub private repos, Visual Studio Online).
