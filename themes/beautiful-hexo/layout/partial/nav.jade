@@ -11,8 +11,8 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-custom
             ul.nav.navbar-nav.navbar-right
                 each item in theme.footer
                     if item.enable
-                        li.hidden-sm
-                            a.social(href=item.link, title=item.title)
+                        li.hidden-xs
+                            a.social.hidden-xs(href=item.link, title=item.title)
                                 span.fa-stack.fa-lg
                                     i.fa.fa-circle.fa-stack-2x
                                     i.fa.fa-stack-1x.fa-inverse(class=item.icon)
