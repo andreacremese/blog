@@ -1,0 +1,23 @@
+extends partial/base
+
+block header
+    header.header-section
+        .intro-header.no-img
+            .page-heading
+                h1!= page.title
+                if page.subtitle
+                    hr.small
+                    span.page-subheading!= page.subtitle
+
+block content
+    .container
+        .row
+            .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+                article(role="main", class="blog-post")
+                    != page.content
+            .col-lg-2.hidden-md.most-recent
+                h3 Most Recent
+                - site.posts.sort('-date').slice(0,5).each(function (post){
+                        a(href=url_for(post.path))
+                            h5.title!= post.title
+                -})

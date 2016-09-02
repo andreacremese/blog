@@ -1,0 +1,92 @@
+navbar-links:
+    Pics: /pics
+    About: /about
+
+avatar: /favicon.jpg
+favicon: /favicon.jpg
+
+header:
+    title: "Andrea Cremese"
+    motto: 'All your code are belong to us' 
+    bigimgs:
+        - src: /bigimgs/zion.jpg
+          desc: Zion Nat Park UT
+        - src: /bigimgs/ski.jpg
+          desc: SunRiver OR
+        - src: /bigimgs/sea.jpg
+          desc: Seattle WA
+
+rss: /atom.xml
+googlefonts:
+  - "Lora:400,700,400italic,700italic"
+  - "Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+
+footer:
+  facebook:
+    link: # your link e.g. https://...
+    title: Facebook
+    icon: fa-facebook
+    enalbe: false
+  weibo:
+    link: 'http://weibo.com/bisyao?is_all=1'
+    title: Weibo
+    icon: fa-weibo
+    enalbe: true
+  github:
+    link: 'https://github.com/andreacremese'
+    title: GitHub
+    icon: fa-github
+    enable: true
+  rss:
+    link: '/atom.xml'
+    title: RSS
+    icon: fa-rss
+    enable: false
+  twitter:
+    link: 'https://twitter.com/andreacremese'
+    title: Twitter
+    icon: fa-twitter
+    enable: true
+  linkin:
+    link: 'https://www.linkedin.com/in/andreacremese'
+    title: LinkedIn
+    icon: fa-linkedin
+    enable: true
+  stackoverflow:
+    link: # your link here e.g. http...
+    title: StackOverflow
+    icon: fa-stack-overflow
+    enable: false
+  mail:
+    link: 'mailto:cremese@gmail.com'
+    title: Email me
+    icon: fa-envelope
+    enable: false
+
+google_analytics:
+
+comment:
+  enable: true
+  disqus: andreacremese
+
+archive_generator:
+    per_page: 0
+    yearly: false
+    monthly: false
+    daily: false
+
+
+highlight:
+  enable: true
+  style_path: "/css/highlight.css"
+
+
+generatorRecent:
+  file: recent.json
+  number: 5
+  sort: -date
+  fields: # set to true for all fields (default)
+    - title
+    - slug
+    - date
+    - tags
