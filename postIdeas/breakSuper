@@ -1,25 +1,42 @@
-class P {
-    foo() { console.log( "P.foo" ); }
+---
+title: breaking super in JS
+date: 2016-09-14 11:20:07
+tags:
+	- JS
+---
+
+With ES6 Javascript has moved towards objeect oriented programming. Frameworks like Typescript enhance this, making coding in JS easier for developers coming from a c# background.
+
+This is certainly interesting, but I am trying to remind myself that JS is not an OOP language. As brillianlty explained by [Kyle Simpson in many occasions](https://davidwalsh.name/javascript-objects-distractions), the object inheritance mechanism that c# provides is completely different from the object's behavior delegation that JS provides.
+
+One of the byproducts of this is that super is actually statically calculated at declaration time. This means that, if the method that `super` refers to gets changed later on, the old implementation gets called. Let's get on with it.
+
+```
+// ES6 classes 
+class SomeClass {
+    foo() { console.log( "I am the parent" ); }
 }
 
-class C extends P {
-    foo() {
-        super.foo();
-    }
-}
+var o1 = new SomeClass();
+o1.foo(); // "I am the parent"
+// all good this far
 
-var c1 = new C();
-c1.foo(); // "P.foo"
-
-var D = {
-    foo: function() { console.log( "D.foo" ); }
+// New Object, with behavior delegation
+var Child0 = {
+    foo: SomeClass.prototype.foo
 };
 
-var E = {
-    foo: C.prototype.foo
+Child0.foo() // "I am the parent"
+
+var ParentO = {
+    foo: function() { console.log( "I am the parent 0" ); },
+    bar : function() { console.log("Now for some fun")}
 };
+ 
+// Objrect's behavior delegation, this should switch foo
+Object.setPrototypeOf( Child0, ParentO );
 
-// Link E to D for delegation
-Object.setPrototypeOf( E, D );
+Child0.foo(); // "I am the parent"  and NOT "I am the parent 0"
+```
 
-E.foo(); // "P.foo"  <-- not D.foo
+Note that Child (as every class) is actually a function, and as a funciton it has a prototype object.

@@ -1,0 +1,10 @@
+        selectorPerField: function(field, searchString) {
+            // custom selector for dxVersionId
+            if (field == 'dxVersionId') {
+                var matchRegEx = new RegExp(".*" + searchString + ".*", "i");
+                var matchingdx = dxVersions.find({name : matchRegEx}).map(function (d) {return d._id});
+                return {dxVersionId : {$in : matchingdx}};
+            }
+            // default selector
+            return this.defaultConfiguration().selectorPerField(field, searchString);
+        },
