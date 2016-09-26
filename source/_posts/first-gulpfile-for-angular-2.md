@@ -14,9 +14,9 @@ First step is automate transpiling, copying and livereload, a musts for developm
 
 After a bit of tinkering, I came up with a `gulpfile` that:
 
-- Keeps the workspace clean (who wants `.js.map` and `.js` files in the way in a NG2 and typescript project??).
-- Allows for livereload.
-- Waits to reload after the transpiling & copying to the bin folder is done.
+* Keeps the workspace clean (who wants `.js.map` and `.js` files in the way in a NG2 and typescript project??).
+* Allows for livereload.
+* Waits for the transpiling & copying to the `bin/` folder before reloading (otherwise, the browser will miss files).
 
 
 
