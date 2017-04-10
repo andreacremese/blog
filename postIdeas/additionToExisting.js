@@ -1,3 +1,11 @@
+Add this to the mongo sql one
+asnotracking!!!
+add the pre 3.3.4 version of the request to get mongo elements
+
+
+
+
+
 add ons to the blog post regarding arrow functions:
 
 

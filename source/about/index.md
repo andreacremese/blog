@@ -13,5 +13,4 @@ My main insterests involve using modern technologies, best practices, agile and 
 
 I am also interested in bass (the instrument) and running long distances (mostly half marathons). I am wrapping up an MBA with [Durham University Business School](https://www.dur.ac.uk/business/).
 
-Please check out my [linkedin page](https://www.linkedin.com/in/andreacremese) or this [sample app in meteor](http://demoandrea1.cloudapp.net/) (its [code lives here](https://github.com/andreacremese/calendarapp)).
-
+Please check out my [linkedin page](https://www.linkedin.com/in/andreacremese) or this sample app in meteor (its [code lives here](https://github.com/andreacremese/calendarapp) and [here's a sample video](https://www.youtube.com/watch?v=Qu03mRNWPbE)).
