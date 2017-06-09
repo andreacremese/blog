@@ -69,3 +69,4 @@ deploy:
   repo: https://github.com/andreacremese/andreacremese.github.io.git
   branch: master
   message: "a new deploy!"
+  email: "cremese@gmail.com"
