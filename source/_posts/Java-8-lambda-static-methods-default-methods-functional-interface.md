@@ -10,7 +10,7 @@ I just landed on planet **smartsheet** (a very cool Saas), and the job change br
 
 This post (which may become a series of) can be really classified as my personal notes on some of the aspects that I found new, interesting or surprising. It is a mixin of Java specifics, Java 8 specifics, and some of the first watch its for the c# developer that is getting in Java world.
 
-A code snippet is added at the end of the post for future reference.
+A code snippet is added at the end of the post for future reference. 
 
 ## Static methods on interfaces
 
