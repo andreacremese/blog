@@ -5,12 +5,12 @@ date: 2016-08-02 18:07:13
 
 ## <center> Hi, I am Andrea Cremese. </center>
 
-I work as full stack software engineer in the ** Advance Technology Group at Microsoft XBox** in Seattle, WA. Well, Really we are based in  Redmond, but the area is truly beautiful. 
-
-I have an  extremely diversified professional experience, spanning different geographical zones and industries. In my current role I design, architect, build (and sometimes troubleshoot) webapps and tools in order to gather insights to drive the next amazing things coming to our console.
+I am lucky to work with a bunch of very smart, creative and motivated people at [**smartsheet**][1] in Bellevue, WA. I have an  extremely diversified professional experience, spanning different geographical zones and industries.
 
 My main insterests involve using modern technologies, best practices, agile and users insights to build high quality and performant web apps. 
 
-I am also interested in bass (the instrument) and running long distances (mostly half marathons). I am wrapping up an MBA with [Durham University Business School](https://www.dur.ac.uk/business/).
+I am also interested in bass (the instrument), running long distances (mostly half marathons). I am wrapping up an MBA with [Durham University Business School](https://www.dur.ac.uk/business/).
 
-Please check out my [linkedin page](https://www.linkedin.com/in/andreacremese) or this sample app in meteor (its [code lives here](https://github.com/andreacremese/calendarapp) and [here's a sample video](https://www.youtube.com/watch?v=Qu03mRNWPbE)).
+Please check out my [linkedin page](https://www.linkedin.com/in/andreacremese) for more information.
+
+[1]:https://www.smartsheet.com/
