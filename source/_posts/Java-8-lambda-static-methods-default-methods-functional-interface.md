@@ -2,6 +2,10 @@
 title: 'Discovering Java 8: first notes'
 date: 2017-06-08 13:43:19
 tags:
+    - Java
+    - lambda 
+    - static and default methods
+    - functional interface
 ---
 # Discovering Java 8: first notes
 **a.k.a. lambda, static methods, default methods, functional interface**
