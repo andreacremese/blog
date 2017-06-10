@@ -2,19 +2,19 @@
 title: 'Discovering Java 8: first notes'
 date: 2017-06-08 13:43:19
 tags:
-    - Java
-    - lambda 
-    - static and default methods
-    - functional interface
+    - Transitioning to Java
+    - Lambda 
+    - Static and default methods
+    - Functional interfaces
 ---
 # Discovering Java 8: first notes
 **a.k.a. lambda, static methods, default methods, functional interface**
 
-I just landed on planet **smartsheet** (a very cool Saas), and the job change brought me to get from C# to Java. While the two are very similar, there are a few quirks and watch its. It seems that Java 8 (now released in old 2014) introduced a few new interesting features.
+I just joined **[smartsheet][7]**, a Bellevue WA based Saas with a very interesting product and an amazing culture driven by some truly inspiring and inspired leadership. I am really enjoying the company, so hit me up in case you are interested in joining (I definitely **cannot** give away the code challenge in advance, in case you are wondering). 
 
-This post (which may become a series of) can be really classified as my personal notes on some of the aspects that I found new, interesting or surprising. It is a mixin of Java specifics, Java 8 specifics, and some of the first watch its for the c# developer that is getting in Java world.
-
-A code snippet is added at the end of the post for future reference. 
+The back end stack is in Java and so I am currently ramping up and transitioning from C# to Java. This post (which is very likely to become a series of posts) comprises some of my notes on some of the aspects that I found new, interesting or surprising after landing on planet Java. 
+ 
+ It is a mixin of Java specifics, Java 8 specifics, and some of the first watch its for the c# developer that is getting in Java world. A code snippet involving most of the concept that are reported is added at the end of the post for future reference. 
 
 ## Static methods on interfaces
 
@@ -159,6 +159,16 @@ Function<Person, Integer> f = person -> person.GetAge ();
 Function<Person, Integer> f = Person::GetAge ;
 ```
 
+This works as well for methods with two parameters. For example, the following is equivalent:
+
+```
+BinaryOperator<Integer> myOperator = (a, b) -> Integer.max(a,b);
+
+// is the same as
+
+BinaryOperator<Integer> myOperator = Integer::max;
+```
+
 ## Wrapping up
 
 An example of a functional interface, with default AND static methods.
@@ -210,9 +220,13 @@ Example of the consumer of said interface:
     } 
 ```
 
+*Some of the notes are inspired by the Pluralsight course "From Collections to Streams in Java 8 Using Lambda Expressions" at this [link][6].*
+
 
 [1]:https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html
 [2]:https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html#static
 [3]:https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html
 [4]:https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html
 [5]:https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html
+[6]:https://app.pluralsight.com/library/courses/java-8-lambda-expressions-collections-streams/table-of-contents
+[7]:https://www.smartsheet.com/
