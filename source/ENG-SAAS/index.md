@@ -69,25 +69,22 @@ Most of the metrics in this page are non-GAAP.
 ### Network effect
 There are many definitions of network effect. The idea is to create a service/platform/service that attract users "simply so they can interact with the existing users" (attributed to Zuck, from this [article](https://www.wired.com/2012/05/network-effects-and-global-domination-the-facebook-strategy/)). So the product becomes more valuable as people have it and use it.
 
-Examples are the telephone, FB, but as well as MS Office. Office position itself as the only way to generate and open a spreadsheet, and one could/would not want to be out of that in a business environment.
+Examples are the telephone, FB, but as well as MS Office. The fact that others use it, are in it, produce an artifact that can be opened with it makes the product more valuable to me. Office position itself as THE program to create / open spreadsheet in  a business setting, and one could/would not want to be out of that in a business environment.
 
-This is one of the holy grail for SAAS businesses, and a great deal of thinking goes into incrementing the network effects while thinking about a product. A great Network Effect means lots more leeway in the product development. Meaning, the product can be real bad, and you'll still use it (e.g. Craigslist).
+This is one of the holy grail for SAAS businesses, and a great deal of thinking goes into incrementing the network effects when planning and executing on the product. A great Network Effect means lots more leeway in the product development. Meaning, the product can be real bad, and you'll still use it (e.g. Craigslist).
 
 ### Virality
 Not to be confused or conflated with `Network effect`, this simply means that the adoption increases with more adoption. E.g. I may get a `fidget spinner` because everyone else has one, but the fact that everyone else gets one does not make the spinner more valuable to me.
 
 ### Ecosystem
-Think about iPhone App store OR Android Play. Turning the service into a platform / an ecosystem. One effect of the attempt of generating a richer ecosystem to entice users not to leave is, for example, the push by MS these days (2017) to open Azure to other technologies (Linux, as one example). 
+Think about iPhone App store OR Android Play. Turning the service into a platform / an ecosystem to attract and keep users. One effect of the attempt of generating a richer ecosystem to entice users not to leave is, for example, the push by MS these days (2017) to open Azure to other technologies (Linux, as one example). 
 
-Another coveted aspect for SAAS companies, as it keeps users to churn out + keeps developers adding valuable parts. Apple did not get it right for the iPad, as [Ben Thompson](https://stratechery.com/2015/from-products-to-platforms/) summarized very well.
+Another coveted aspect for SAAS companies, as it keeps users from churning out + keeps developers adding valuable parts. Apple did not get it right for the iPad, as [Ben Thompson](https://stratechery.com/2015/from-products-to-platforms/) summarized very well.
 
 ### Land and expand
 This is a sales concept, which boils down to first land a contract, of any size, with a customer. Then proceed to grow the account's top line (i.e. the revenue from that contract) by working with the customer,understanding the customer's requests and possibly educating him/her on the company's offer. 
 
 In some organizations, different teams deal with the `land` and with the `expand` part. In many cases SAAS companies tend to offer, in addition to the product, consulting on their own product. That is one of the reasons why the sales-to-eng ratio is greater than one.
-
-### How much would my stocks be worth today?
-The question you should ask when offered stock options.
 
 ### Marketing
 It is not Don Draper's promotion, it is not the PR, it's not the packaging. It encompasses A LOT of activities and, most importantly, it does not have a constant definition across the board. Marketing touches anything from product, to price, to promotion, to place (yeah, the 4p). To physical evidence, to process, to people (yeah, the extended 7 ps). Getting it right is key, and most engineers (comprised me at the outset of my career) underestimates this aspect. 
