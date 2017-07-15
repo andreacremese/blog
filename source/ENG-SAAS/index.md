@@ -5,7 +5,7 @@ date: 2017-06-13 18:01:50
 
 # The SAAS cheatsheet
 
-If you are working (or are about to start to work) in the US Tech industry sector, the probability you will work in a company that has a SAAS distribution model for its software are extremely high (see for example [this Gartner article](http://www.gartner.com/newsroom/id/3616417)). This distribution model has some very specific aspects. 
+If you are working (or are about to start to work) in the US Tech industry sector, the probability you will work in a company that has a SAAS distribution model for its software are high (see for example [this Gartner article](http://www.gartner.com/newsroom/id/3616417) as a proxy). This distribution model has some very specific aspects. 
 
 In this cheat sheet I collected the main metrics and concepts I have came across for SAAS businesses. **As a cheat sheet, this is not supposed to be an encompassing guide, but rather a primer for those working, interviewing, or simply interested in this space.** Each of the metric and concept presented would warrant a separate and deeper analysis.
 
@@ -47,7 +47,9 @@ Not all churns are made equal. Churn is physiological and almost unavoidable for
 ### Users VS Customers
 Startup tend to report users, but be extra careful as users may be different than customers. In many cases in a SAAS model, a **customer** has multiple seats (i.e. **users**), so there may be a single paying customer per multiple users.
 
-User count is very useful to understand the size of the operations, the potential network effect, and the technical/engineering challenges. But to gauge the financials of a company, ask for the number of (paying) customers.
+User count is very useful to understand the size of the operations, possibly potential network effect (if they are strong), and the technical/engineering challenges (if you are going to be working in R+D). One of the key indicators for social networks that rely on a freemium OR on (even more importantly) on advertisement revenue model is indeed MAU (Monthly Active Users). But to gauge the financials of a SAAS company, the number of (paying) customers is more appropriate.
+
+Another benefit of this is that SAAS companies usually report what is the average spend per customer, but not their trailing revenue. Having the number of customers, calculating the revenue is trivial.
 
 ### Run Rate
 Pro rata the income of a single period (say, a quarter) to a year. This is a measure of a business top line that presumes no growth (or decline, for that matter) as it takes current performance and projects that as the bases for the full year. Handle with care: imagine taking the sales on black friday and project to the full year.
